@@ -55,8 +55,9 @@ var LifeExpentencyOfTotal = fs.createWriteStream("LifeExpentencyOfTotal.json");
 			    if(totalValues[3].startsWith(" male (years)")){/*if the third column value ends with the word "birth",
 			     then the third and fourth columns will combines*/
 			       	if((totalValues[5]>=1960)&&totalValues[5]<=2015){
+
 						var singlevalue={};				
-        				for(var i=0;i<=0;i++){//it checks for the values only for asian countries
+        				for(var i=0;i<=countrynames.length;i++){//it checks for the values only for asian countries
 	          				if(totalValues[0]==countrynames[i]){//it checks for the country names which are in the asian countries 
 					 
 							  	singlevalue["year"]=totalValues[5];
@@ -92,12 +93,19 @@ var LifeExpentencyOfTotal = fs.createWriteStream("LifeExpentencyOfTotal.json");
 	// console.log( jsonObjectArrayF[0].year );
 	// console.log( jsonObjectArrayF[0].countryname );
 	// console.log( jsonObjectArrayF[0].female );
-	// console.log( jsonObjectArrayM[0].year );
-	// console.log( jsonObjectArrayM[0].countryname );
-	// console.log( jsonObjectArrayM[0].male );
+	console.log( jsonObjectArrayM[0].year );
+	console.log( jsonObjectArrayM[0].countryname );
+	console.log( jsonObjectArrayF[0].female );
+	console.log( jsonObjectArrayM[0].male );
 	// console.log( jsonObjectArrayT[0].year );
 	// console.log( jsonObjectArrayT[0].countryname );
-	// console.log( jsonObjectArrayT[0].total );
+	console.log( jsonObjectArrayT[0].total );
+
+	console.log( jsonObjectArrayM[1].year );
+	console.log( jsonObjectArrayM[1].countryname );
+	console.log( jsonObjectArrayF[1].female );
+	console.log( jsonObjectArrayM[1].male );
+	console.log( jsonObjectArrayT[1].total );
 
 	LifeExpentencyOfTotal.write(JSON.stringify(jsonObjectArrayT));//creating LifeExpentencyOfTotal JSON	
 
